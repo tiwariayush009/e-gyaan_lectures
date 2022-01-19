@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+   </head>
+<body>
+  <div class="topnav" id="myTopnav">
+  <a href="" class="active">E-Gyaan Lectures</a>
+  <a href="index.html">Mathematics</a>
+  <a href="english.html">English</a>
+  <a href="science.html">Science</a>
+  <a href="history.html">History</a>
+  <a href="geography.html">Geography</a>
+  <a href="languages.html">Languages</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+  <section>
+    <div class="container">
+      <div class="main-video">
+          <video src="videos/vid-1.mp4" autoplay muted controls></video>
+          <i class='bx bx-x close'></i>
+      </div>
+      <div class="videos">
+        <h4 style="text-align:center;">01.All about Food</h4>
+        <video src="videos/video-2.mp4"></video>
+        <i class='bx bx-play-circle'></i>
+      </div>
+      <div class="videos">
+        <h4 style="text-align:center;">02.The World Of Living</h4>
+        <video src="videos/video-3.mp4"></video>
+        <i class='bx bx-play-circle'></i>
+      </div>
+      <div class="videos">
+        <h4 style="text-align:center;">03.All About Living Things</h4>
+        <video src="videos/video-4.mp4"></video>
+        <i class='bx bx-play-circle'></i>
+      </div>
+      <div class="videos">
+        <h4 style="text-align:center;">04.Electric Currents</h4>
+        <video src="videos/video-5.mp4"></video>
+        <i class='bx bx-play-circle'></i>
+      </div>
+      <div class="videos">
+      <h4 style="text-align:center;">05.Rain Thunder and Lightning</h4>
+        <video src="videos/video-6.mp4"></video>
+        <i class='bx bx-play-circle'></i>
+      </div>
+      <div class="videos">
+      <h4 style="text-align:center;">06.Importance Of Water</h4>
+        <video src="videos/video-7.mp4"></video>
+        <i class='bx bx-play-circle'></i>
+      </div>
+      <div class="videos">
+      <h4 style="text-align:center;">07.Fun With Magnets</h4>
+        <video src="videos/video-8.mp4"></video>
+        <i class='bx bx-play-circle'></i>
+      </div>
+      <div class="videos">
+      <h4 style="text-align:center;">08.Garbage In,Garbage Out</h4>
+        <video src="videos/video-5.mp4"></video>
+        <i class='bx bx-play-circle'></i>
+      </div>
+    </div>
+  </section>
+  <footer>
+      <p> &COPYRIGHT:E-GYAAN-THE ONLINE LEARNING PLATFORM 2021-2022 </p>
+  </footer>
+
+  <script>
+    const section = document.querySelector("section"),
+    mainVideo = document.querySelector(".main-video video"),
+     videos = document.querySelectorAll(".videos"),
+     close = document.querySelector(".close");
+
+     for (var i = 0; i < videos.length; i++) {
+       videos[i].addEventListener("click", (e)=>{
+         const target = e.target;
+         section.classList.add("active");
+         target.classList.add("active");
+         let src = document.querySelector(".videos.active video").src;
+         mainVideo.src = src;
+
+         close.addEventListener("click", ()=>{
+           section.classList.remove("active");
+           target.classList.remove("active");
+           mainVideo.src = "";
+         });
+       });
+     };
+  </script>
+</body>
+</html>

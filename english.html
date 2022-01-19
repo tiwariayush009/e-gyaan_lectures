@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+   </head>
+<body>
+  <div class="topnav" id="myTopnav">
+  <a href="" class="active">E-Gyaan Lectures</a>
+  <a href="index.html">Mathematics</a>
+  <a href="english.html">English</a>
+  <a href="science.html">Science</a>
+  <a href="history.html">History</a>
+  <a href="geography.html">Geography</a>
+  <a href="languages.html">Languages</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+  <section>
+    <div class="container">
+      <div class="main-video">
+          <video src="media/vid-1.mp4" autoplay muted controls></video>
+          <i class='bx bx-x close'></i>
+      </div>
+      <div class="videos">
+        <h4 style="text-align:center;">01.Who Did Patrick’s Homework?</h4>
+        <video src="media/vid-1.mp4"></video>
+        <i class='bx bx-play-circle'></i>
+      </div>
+      <div class="videos">
+        <h4 style="text-align:center;">02.How the Dog Found Himself a New Master!</h4>
+        <video src="media/video-2.mp4"></video>
+        <i class='bx bx-play-circle'></i>
+      </div>
+      <div class="videos">
+        <h4 style="text-align:center;">03.Taro’s Reward</h4>
+        <video src="media/video-3.mp4"></video>
+        <i class='bx bx-play-circle'></i>
+      </div>
+      <div class="videos">
+        <h4 style="text-align:center;">04.An Indian – American Woman:Kalpana Chawla</h4>
+        <video src="media/video-4.mp4"></video>
+        <i class='bx bx-play-circle'></i>
+      </div>
+      <div class="videos">
+      <h4 style="text-align:center;">05.A Different Kind of School</h4>
+        <video src="media/video-5.mp4"></video>
+        <i class='bx bx-play-circle'></i>
+      </div>
+      <div class="videos">
+      <h4 style="text-align:center;">06.Who I Am</h4>
+        <video src="media/video-6.mp4"></video>
+        <i class='bx bx-play-circle'></i>
+      </div>
+      <div class="videos">
+      <h4 style="text-align:center;">07.Fair Play</h4>
+        <video src="media/video-7.mp4"></video>
+        <i class='bx bx-play-circle'></i>
+      </div>
+      <div class="videos">
+      <h4 style="text-align:center;">08.A Game of Chance</h4>
+        <video src="media/video-8.mp4"></video>
+        <i class='bx bx-play-circle'></i>
+      </div>
+    </div>
+  </section>
+  <footer>
+      <p> &COPYRIGHT:E-GYAAN-THE ONLINE LEARNING PLATFORM 2021-2022 </p>
+  </footer>
+
+  <script>
+    const section = document.querySelector("section"),
+    mainVideo = document.querySelector(".main-video video"),
+     videos = document.querySelectorAll(".videos"),
+     close = document.querySelector(".close");
+
+     for (var i = 0; i < videos.length; i++) {
+       videos[i].addEventListener("click", (e)=>{
+         const target = e.target;
+         section.classList.add("active");
+         target.classList.add("active");
+         let src = document.querySelector(".videos.active video").src;
+         mainVideo.src = src;
+
+         close.addEventListener("click", ()=>{
+           section.classList.remove("active");
+           target.classList.remove("active");
+           mainVideo.src = "";
+         });
+       });
+     };
+  </script>
+</body>
+</html>
